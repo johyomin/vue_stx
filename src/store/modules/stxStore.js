@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const state = {
   // gnb 메뉴데이터
   gnbData : [
@@ -72,7 +74,27 @@ const state = {
     {url: 'i.html', title:'STX건설, 2018년 성장 청신호'}
   ]
 };
-const actions = {};
+const actions = {
+
+  fetchGnb() {
+    axios.get('/data/gnb.json')
+    .then(response => console.log("axios", response))
+    .catch(err => console.log(err))
+  },
+
+  fetchNews() {
+    axios.get('/data/news.json')
+    .then(response => console.log(response))
+    .catch(err => console.log(err))
+  },
+
+  fetchNotice() {
+    axios.get('/data/notice.json')
+    .then(response => console.log(response))
+    .catch(err => console.log(err))
+  }
+
+};
 const mutations = {};
 const getters = {
   getGnbData(state){
