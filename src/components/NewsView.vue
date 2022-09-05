@@ -37,6 +37,7 @@ export default {
     // vuex 의 action 요청
     store.dispatch('fetchNews');
     store.dispatch('fetchNotice');
+    
     return {  
       nsdata, 
       ntdata    
