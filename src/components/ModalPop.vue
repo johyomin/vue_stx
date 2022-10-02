@@ -1,14 +1,22 @@
 <template>
     <div class="modal-wrap">
         <div class="modal-main">
-            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-triangle modal-icon-left" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-triangle modal-icon-right" aria-hidden="true"></i>
             <h1>STX 클론코딩</h1>
             <p>
-                &middot; 이 사이트는 <b>스터디용</b>으로 제작되었으며 리소스는 <b>원저작자</b>에게 있습니다.<br>
-                &middot; 해당 사이트 관련 문제사항 발생시 즉시 삭제하겠습니다.<br>
-                &middot; 문의 사항이 있으실 경우
-                <strong><a href="mailto:scnly222@naver.com">[scnly222@naver.com]</a></strong> 으로 연락부탁드립니다.<br>
-                &middot; 본 사이트는 Chrome 에 최적화되어 있습니다.
+                &#183; 이 사이트는 <b>스터디용</b>으로 제작되었으며 리소스는
+                <b>원저작자</b>에게 있습니다.<br />
+                &#183; 해당 사이트 관련 문제사항 발생시 즉시 삭제하겠습니다.<br />
+                &#183; 본 사이트는 Chrome 에 최적화되어 있습니다.<br />
+                <span class="modal-text-box">
+                    - 원사이트에 없는 파비콘을 직접 제작하였습니다.<br />
+                    - jquery를 사용해 서브메뉴에 hover시 주메뉴 포커스 기능을 업데이트하였습니다.<br />
+                    - jquery를 사용해 part 섹션의 배경배치를 구현하였습니다.
+                </span>
+                &#183; 문의 사항이 있으실 경우
+                <strong><a href="mailto:johyomin1119@gmail.com">❮ johyomin1119@gmail.com ❯</a></strong>으로
+                연락부탁드립니다.
             </p>
             <button class="modal-close"></button>
         </div>
@@ -59,19 +67,30 @@
         position: fixed;
         left: 0;
         top: 0;
+        display: block;
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.6);
         z-index: 99999;
     }
 
-    .fa {
+    .modal-icon-left {
         position: absolute;
         display: block;
-        top: 24%;
-        right: 37%;
-        font-size: 130px;
-        color: rgba(250, 19, 19, 0.1);
+        top: 9%;
+        left: 30%;
+        font-size: 22px;
+        color: #d36853;
+        z-index: -9;
+    }
+
+    .modal-icon-right {
+        position: absolute;
+        display: block;
+        top: 9%;
+        right: 30%;
+        font-size: 22px;
+        color: #d36853;
         z-index: -9;
     }
 
@@ -80,18 +99,19 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 570px;
-        height: 220px;
+        width: 615px;
+        height: 350px;
         background-color: #fff;
         border-radius: 10px;
         padding: 10px;
         box-shadow: 0px 0px 15px 0px rgba(207, 174, 197, 0.212);
         border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
     }
 
     .modal-main h1 {
         font-size: 25px;
-        font-weight: 500;
+        font-weight: 700;
         text-align: center;
         color: #555;
         padding-top: 10px;
@@ -108,7 +128,7 @@
 
     .modal-main b {
         font-weight: 600;
-        color: #ff4a50;
+        color: #d36853;
     }
 
     .modal-main strong {
@@ -126,12 +146,22 @@
         top: 16px;
         border: 0;
         cursor: pointer;
-        background: url('@/assets/images/cancel.png') no-repeat center;
+        background: url("@/assets/images/cancel.png") no-repeat center;
         background-size: cover;
         transition: transform 0.5s;
     }
 
     .modal-close:hover {
         transform: rotate(90deg);
+    }
+
+    .modal-text-box {
+        position: relative;
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid rgb(230, 199, 193);
+        font-weight: 600;
     }
 </style>
